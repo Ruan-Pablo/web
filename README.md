@@ -11,7 +11,14 @@ O react compila numa forma de bundle todo o jsx para que o navegador entenda a l
 
 > Possibilita criar atalho de aplicativo na tela inicial(de trabaalho) no dispositivo mobile.
 
+## bootstrap
 
+`<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'>`
+
+---
+---
+---
+---
 # React
 
 # Getting Started with Create React App
