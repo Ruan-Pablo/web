@@ -1,6 +1,8 @@
 # Estudo de React
  > aqui eu vou buscar deixar algumas coisas explicadas para que o Ruan do futuro volte aqui, leia e entenda.
 
+Eu estou acompanhando essa playlist de aula: [[ReactJS] - Netflix Clone](https://www.youtube.com/playlist?list=PL_Axpn7FrXHSqH662YsTVbsbbqPQkrbhH)
+
 ## como funciona
 
 O react compila numa forma de bundle todo o jsx para que o navegador entenda a linguagem. Ele joga o bundle(arquivo compilado) na tag root no index
