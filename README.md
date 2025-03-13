@@ -1,3 +1,17 @@
+# Estudo de React
+ > aqui eu vou buscar deixar algumas coisas explicadas para que o Ruan do futuro volte aqui, leia e entenda.
+
+## como funciona
+
+O react compila numa forma de bundle todo o jsx para que o navegador entenda a linguagem. Ele joga o bundle(arquivo compilado) na tag root no index
+
+### Manifest.json
+
+> Possibilita criar atalho de aplicativo na tela inicial(de trabaalho) no dispositivo mobile.
+
+
+# React
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
