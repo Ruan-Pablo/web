@@ -1,24 +1,93 @@
 // primeiro componente - estrutura básica
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 // igugal se fizesse const React = require('react')
 import Filme from '../Components/Filmes';
 
+// UseEEffect - ficaaa escutando mudaça dos States
 
 const Home = () => {
     // LÓGICA DO COMPONENTE
-    const listaFilmes = [
-        {nome: 'filme 1', ano: 2020, categoria: 'categoria 1'},
-        {nome: 'filme 2', ano: 2021, categoria: 'categoria 2'},
-        {nome: 'filme 3', ano: 2022, categoria: 'categoria 3'},
-        {nome: 'filme 4', ano: 2023, categoria: 'categoria 4'},
-        {nome: 'filme 5', ano: 2024, categoria: 'categoria 5'}
-    ]
+    
+    // extrai um array 
+    // [Variavel estado, função que atualiza ] = useState(estado inical)
+    const [ listaFilmes, setListaFilmes] = useState([]) // nesse caso o estado inicial é uma lista vazia
+    const [filme, setFilme] = useState({
+        nome: 'Exemplo inicial',
+        categoria: 'Inical',
+        ano: 0
+    }) 
+    // const listaFilmes = [] - antes era assim
+
+    const cadastrar = () => {
+        setListaFilmes([...listaFilmes, filme])
+    }
+
+    // useEffect(função, arraw de states que serão escutadas)
+    useEffect(() => {
+        alert('Filme cadastrado')
+    }, [listaFilmes])
+
+    // sempre que for carregado - sem state
+    useEffect(() => {
+        console.log('COMPONENTE CARREGADO')
+    }, [])
+
     // RETORNAR O HTML DO COMPONENTE
     return (
         <div className='container'>
             <br/>
-            <h1>Lista Filmes</h1>
+            <h1 className='display-1'>Lista de Filmes</h1>
             <br/>
+            <div className='p-4 mb-4 bg-light rounded-3'>
+                <div className='container-fluid'>
+                    <div className='row'>
+                        <div className='col-4'>
+                            <label>Nome</label>
+                            <input 
+                                type='text' 
+                                className='form-control' placeholder='Nome do filme'
+                                onChange={(e) => {
+                                    setFilme({
+                                        ...filme, // pega tudo qque ja tem dentro
+                                        nome:e.target.value
+                                    })
+                                }}/>
+                        </div>
+                        <div className='col-4'>
+                            <label>Categoria</label>
+                            <select 
+                                className='form-control'
+                                onChange={(e)=>{
+                                    setFilme({
+                                        ...filme,
+                                        categoria: e.target.value
+                                    })
+                                }}>
+                                <option>1</option>
+                                <option>2</option>
+                                <option>3</option>
+                                <option>4</option>
+                            </select>
+                        </div>
+                        <div className='col-4'>
+                            <label>Ano</label>
+                            <input 
+                                    type='number' className='form-control'
+                                    onChange={(e)=>{
+                                        setFilme({
+                                            ...filme,
+                                            ano: e.target.value
+                                        })
+                                    }}/>
+                        </div>
+                    </div>
+                    <br/>
+                    <div className='d-grid gap-2'>
+
+                    <button className='btn btn-success d-block' onClick={cadastrar}>Cadastrar</button>
+                    </div>
+                </div>
+            </div>
             <table class="table table-striped">
                 <thead>
                     <tr>

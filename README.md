@@ -15,6 +15,21 @@ O react compila numa forma de bundle todo o jsx para que o navegador entenda a l
 
 `<link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css'>`
 
+## state 
+
+> Armazena variáveis do componente. Quando muda algo lá dentro, a tela atualiza sozinha. diferente de variáveis que não re-renderizam
+
+## Hooks
+
+> { Hooks } são umas funções que deixam os componentes usarem coisas do React, tipo state e efeitos, sem precisar de classe. É tipo um "atalho" pra fazer o React funcionar mais fácil.
+
+### Spread operator
+
+Spread (...) espalha os valores de um array ou objeto em outro lugar.
+`const nums = [1, 2, 3];` <br> 
+`const maisNums = [...nums, 4, 5]; // [1, 2, 3, 4, 5]`
+
+
 ---
 ---
 ---
