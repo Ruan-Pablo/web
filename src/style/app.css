@@ -1,0 +1,302 @@
+body{
+  background-color: black;
+}
+
+.bg-filmes{
+  background-image: url(../assets/background.jpg);
+  background-size: cover;
+  /* background-repeat: no-repeat; */
+  background-color: rgba(0, 0, 0, 0.5); /* Preto com 50% de opacidade */
+  background-blend-mode: darken; /* Mistura a cor com a imagem */
+}
+
+header{
+  padding: 20px;
+  background: linear-gradient(
+    
+    180deg, 
+    rgba(0, 0, 0, 0.8) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  /* background-color: antiquewhite; */
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+}
+
+.logo {
+  width: 120%;
+  min-width: 100px;
+  max-width: 300px;
+}
+
+#caixa_login{
+  background-color: rgba(0,0,0,0.7);
+  padding: 30px;
+  margin-top: 150px;
+}
+
+.menu_list{
+  list-style: none;
+  padding-left: 0;
+  padding-top: 7px;
+}
+
+.menu_list li {
+  display: inline-block;
+  margin-left: 15px;
+}
+.menu_list li a {
+  color: white;
+}
+
+#hero{
+  height: 700px;
+  background-image: url(../assets/filme-capa.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  position: absolute;
+  z-index: 1;
+  top: 0;
+}
+
+#hero::after{
+  content: '';
+  width: 100%;
+  height: 350px;
+  display: block;
+  background: linear-gradient(
+    360deg, 
+    rgba(0, 0, 0, 0.9) 0%,
+    rgba(0, 0, 0, 0) 100%
+  );
+  position: absolute;
+  left: 0;
+  z-index: 2;
+  top: calc(700px - 350px);
+}
+
+#hero-infos {
+  padding: 0;
+  margin-top: 170px;
+  z-index: 3;
+  position: relative;
+}
+
+#hero_infos img.logo {
+  margin-bottom: 50px;
+  width: 500px;
+}
+
+#top-10 {
+  font-size: 18px;
+  box-sizing: border-box;
+  color: white;
+  font-weight: 800;
+  border: 3px solid white;
+  border-radius: 5px;
+  line-height: 17px;
+  text-align: center;
+  align-self: center;
+  padding: 3px;
+}
+#top-10 span{
+  font-size: 32px;
+  display: block;
+  height: 23px;
+}
+
+#heros_infos h1 {
+  margin-bottom:  20px;
+}
+
+.subtitulo{
+  font-size: 18px;
+}
+
+.btn-custom-trans{
+  background-color: rgba(255, 255, 255, 0.22);
+  color: #fff;
+}
+
+.btn-custom-trans:hover{
+  opacity: 0.8;
+  color: #fff;
+}
+
+.main-content{
+  margin-top: 700px;
+}
+
+.btn-custom-round{
+  padding: 5px 9px !important;
+}
+
+.opacity-50{
+  opacity: 0.5;
+}
+
+.filme-lista {
+  overflow-x: scroll;
+  list-style: none;
+  white-space: nowrap;
+  padding: 20px 0;
+  display: block;
+  border: solid 1px transparent;
+}
+
+.filme-lista::-webkit-scrollbar{
+  display: none;
+}
+
+
+.filme {
+  display: inline-block;
+  width: 250px;
+  margin-right: 10px;
+  border-radius: 3px;
+  overflow: hidden;
+  transition: 0.3s;
+  border: solid 1px transparent;
+}
+
+.filme img{
+  max-height: 140px;
+}
+
+.filme:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+  z-index: 99;
+  transition: 0.3s;
+}
+/* quando acontercer o hover .nesse | faça .nesse */
+.filme:hover .filme-info{ 
+  transform: scale(1);
+  transition: 0.3s;
+}
+
+.filme:first-child{
+  margin-left: 100px;
+}
+
+
+.filme-info{
+  background-color: #171717;
+  padding: 10px;
+  height: 100px;
+  width: 100%;
+  transform: scale(0);
+}
+
+.filme-info .col-12 {
+  margin-bottom: 5px;
+}
+.filme-info .col-12:first-child {
+  margin-bottom: 20px;
+  padding: 0;
+}
+
+.filme-info p {
+  color:#7e7b7b ;
+  font-size: 12px;
+}
+
+.filme-info p text {
+  color: #fff;
+}
+
+section {
+  margin-bottom: -100px;
+  position: relative;
+}
+
+section:hover{
+  z-index: 99;
+}
+
+
+/* MODAL */
+.modal-dialog, .modal-content {
+  background-color: #171717;
+}
+
+.modal-dialog{
+  max-width: 600px;
+}
+
+.modal-hero {
+  height: 300px;
+  background-image: url(../assets/filme-capa.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 40px;
+  margin-bottom: 30px;
+}
+
+.modal-hero::after{
+  content: '';
+  width: 100%;
+  height: 200px;
+  display: block;
+  background: linear-gradient(180deg, rgba(23,23,23,0) 0%, #171717 100%); 
+  position: absolute;
+  left: 0;
+  margin-top: -120px;
+  z-index: 1;
+}
+
+.modal-hero img {
+  width: 250px;
+  margin-top: 40px;
+  margin-bottom: 40px;
+  position: relative;
+  z-index: 2;
+}
+
+.modal-hero-infos{
+  position: relative;
+  z-index: 2;
+}
+
+.modal-info{
+  z-index: 2;
+}
+
+.modal-hero-infos button:first-child{
+  margin-right: 20px;
+}
+
+.filme-descricao{
+  font-size: 15px;
+  color: #fff;
+}
+
+.filme-elenco{
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.filme-elenco text{
+  color: #fff;
+}
+
+#lista-episodios{
+  list-style: none;
+  padding: 0;
+}
+
+#lista-episodios li {
+  padding: 20px;
+  width: 100%;
+}
+#lista-episodios li:hover {
+  cursor: pointer;
+  background: rgba(255, 255, 255, 0.05);
+}
+#lista-episodios li p {
+  font-size: 13px;
+}

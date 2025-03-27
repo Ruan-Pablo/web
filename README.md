@@ -29,7 +29,9 @@ Spread (...) espalha os valores de um array ou objeto em outro lugar.
 `const nums = [1, 2, 3];` <br> 
 `const maisNums = [...nums, 4, 5]; // [1, 2, 3, 4, 5]`
 
+## Adicionando HTML
 
+'eu nn precisei importar o bootstrap, mas tbm nn está funcionando tudo como deveria
 ---
 ---
 ---
