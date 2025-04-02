@@ -39,7 +39,7 @@ header{
 
 .menu_list{
   list-style: none;
-  padding-left: 0;
+  font-size: large;
   padding-top: 7px;
 }
 
@@ -49,6 +49,7 @@ header{
 }
 .menu_list li a {
   color: white;
+  text-decoration: none;
 }
 
 #hero{
