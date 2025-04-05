@@ -3,7 +3,7 @@ import React from "react";
 const Filme = () => {
     return(
         <li class="filme" data-bs-toggle="modal" data-bs-target="#modal-filme">
-            <img src={require("../../../assets/filme-capa.jpg")}a alt="" class="img-fluid"/>
+            <img src={require("../../../assets/filme-capa.jpg")} alt="" class="img-fluid"/>
             <div class="filme-info">
                 <div class="col-12">
                     <a href="#" class="btn-custom-round btn btn-light rounded-circle">

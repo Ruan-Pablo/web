@@ -5,12 +5,11 @@ import 'remixicon/fonts/remixicon.css';
 
 import reportWebVitals from './reportWebVitals';
 
-import Home from './pages/Home';
-import Login from './pages/Login'
+import RoutesApp from './routes';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <Home />
+  <RoutesApp />
 );
 
 // jeito antio

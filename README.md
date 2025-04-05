@@ -32,6 +32,26 @@ Spread (...) espalha os valores de um array ou objeto em outro lugar.
 ## Adicionando HTML
 
 'eu nn precisei importar o bootstrap, mas tbm nn está funcionando tudo como deveria
+
+## Componentização
+
+Alguns elementos que se repetia a estrutura, foram transformados em elementos
+
+## Rotas
+
+Foi necessário instalar o [Router Module](https://reactrouter.com/start/framework/installation)
+`yarn add react-router-dom`
+
+> No entanto o vídeo está um pouco atrasado e foi necessário fazer algumas modificações para o Router v6, como Switch nn é mais usado
+
+### Axios
+
+modulo para fazer requições a API
+
+`yarn add axios`
+
+
+
 ---
 ---
 ---

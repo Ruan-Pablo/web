@@ -7,7 +7,11 @@ import Header from "../Components/Header";
 import Hero from "../Components/Hero";
 import Secao from '../Components/Secao'
 
+
+
 const Home = () => {
+
+
     return (
         <>
         
