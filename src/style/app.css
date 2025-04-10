@@ -54,7 +54,7 @@ header{
 
 #hero{
   height: 700px;
-  background-image: url(../assets/filme-capa.jpg);
+  /* background-image: url(../assets/filme-capa.jpg); */
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;

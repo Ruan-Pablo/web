@@ -51,6 +51,9 @@ modulo para fazer requições a API
 `yarn add axios`
 
 
+## Recurperando os dados da api
+
+>[ALERT] Não vai mostrar as imagens pq nn tem mais o local que elas estávam armazenadas
 
 ---
 ---

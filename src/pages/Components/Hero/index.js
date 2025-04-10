@@ -1,21 +1,23 @@
 import React from "react";
 import titulo from '../../../assets/titulo.png'
 
-const Hero = () => {
+const Hero = ({filme}) => {
     return (
         <div id="hero" class="container-fluid">
             <div class="container">
-            <div id="hero-infos" class="row">
+            <div id="hero-infos" class="row" style={{backgroundImage: `url(${filme.thumb})`, backgroundRepeat: 'no-repeat', backgroundSize: 'cover'}}>
                 <div class="col-6">
-                <img src={titulo} alt="titulo as passageiras" />
+                <img src={filme.logo} alt="titulo as passageiras" />
                 <div class="" style={{display: 'flex',}}>
                     <div id="top-10">
                         TOP<span>10</span>
                     </div>
                     <h1 className="text-white">Top 1 de hoje no brasil</h1>
                 </div>
-                <p class="text-white subtitulo">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Obcaecati ex eius odio maxime reprehenderit architecto.</p>
-                <br/>
+                <p class="text-white subtitulo">{filme.descricao?.substr(0,190)} ...</p>
+                <br/>/
+                {/* ? - optional chaining */}
+                {/* .substr() - metodo de string, limita */}
                 <button class="btn btn-lg bg-light">
                     <i class="ri-play-mini-fill"></i>
 

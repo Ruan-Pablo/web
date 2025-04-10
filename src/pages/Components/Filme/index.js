@@ -1,9 +1,10 @@
 import React from "react";
 
-const Filme = () => {
+const Filme = ({filme}) => {
     return(
         <li class="filme" data-bs-toggle="modal" data-bs-target="#modal-filme">
-            <img src={require("../../../assets/filme-capa.jpg")} alt="" class="img-fluid"/>
+            {console.log(filme.thumb)}
+            <img src={filme.thumb} alt={filme.titulo} class="img-fluid"/>
             <div class="filme-info">
                 <div class="col-12">
                     <a href="#" class="btn-custom-round btn btn-light rounded-circle">
