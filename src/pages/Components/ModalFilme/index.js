@@ -1,10 +1,45 @@
-import React from "react";
+import React, {useEffect, useState} from "react";
 import titulo from '../../../assets/titulo.png'
 import Episodio from "../Episodeo";
-
+import api from '../../../services/api'
 
 
 const ModalFilme = () => {
+
+    const [filme, setFilme] = useState({})
+    const [episodios, setEpisodios] = useState([]) // array de objetos
+
+    const selectFilmeListener = () => {
+        window.addEventListener("selectFilme", (data) => {
+            setFilme(data.detail)
+        })
+    }
+
+    const getEpisodios = async (temporada_id) => {
+        try{
+            const response = await api.get(`episodio/temporada/${temporada_id}`)
+            const res = response.data
+            
+            if (res.error){
+                alert(res.message)
+                return false
+            }
+            console.log(res.episodios)
+            setEpisodios(res.episodios)
+        }catch(err){
+            console.log(err.message)
+        }
+    }
+
+    useEffect(() => {
+        selectFilmeListener()
+    }, [])
+    useEffect(() => {
+        if(filme.tipo == 'serie'){
+            getEpisodios(filme.temporadas[0]?._id)
+        }
+    }, [filme])
+
     return (
         <div class="modal fade" id="modal-filme" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
@@ -33,7 +68,7 @@ const ModalFilme = () => {
                         <div class="row">
                         <div class="col-7">
                             <p class="filme-descricao">  
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam ipsum totam magnam obcaecati nobis vero, reiciendis itaque unde, corporis inventore incidunt. 
+                            {filme.descricao}
                             </p>
                         </div>
                         <div class="col-5">
@@ -49,21 +84,32 @@ const ModalFilme = () => {
                             </p>
                         </div>
                         </div>
+                        {(filme.tipo !== "filme") &&(
+                        <>
                         <div class="row">
-                        <div class="col-7">
-                            <h3 class="text-white">Episodio</h3>
-                        </div>
-                        <div class="col-5 text-right">
-                            <select name="" id="" class="form-control">
-                            <option value="">Temporada 1</option>
-                            </select>
-                        </div>
-                        </div>
-                        <div class="row">
-                        <ul id="lista-episodios">
-                            <Episodio/>
-                        </ul>
-                        </div>
+                            <div class="col-7">
+                                <h3 class="text-white">Episodios</h3>
+                            </div>
+                            <div class="col-5 text-right">
+                                <select name="" id="" className="form-control" onChange={(e) => {
+                                    getEpisodios(e.target.value);
+                                        } }>
+                                    {filme.temporadas?.map((temporada) => (
+                                                <option value={temporada._id}>{temporada.titulo}</option>
+                                            ))}
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <ul id="lista-episodios">
+                                        {episodios.map((episodio) => (
+                                                <Episodio episodio={episodio} />
+                                            ))}
+                                    </ul>
+                                </div>
+                            
+                            </>
+                        )}
                     </div>
                     </div>
                 </div>

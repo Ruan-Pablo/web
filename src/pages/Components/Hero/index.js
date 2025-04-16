@@ -1,5 +1,4 @@
 import React from "react";
-import titulo from '../../../assets/titulo.png'
 
 const Hero = ({filme}) => {
     return (

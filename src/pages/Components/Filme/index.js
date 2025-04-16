@@ -1,9 +1,17 @@
 import React from "react";
 
 const Filme = ({filme}) => {
+
+    const selectFilme = () => {
+        const event = new CustomEvent('selectFilme', {
+            detail:filme,
+        })
+
+        window.dispatchEvent(event)
+    }
+
     return(
-        <li class="filme" data-bs-toggle="modal" data-bs-target="#modal-filme">
-            {console.log(filme.thumb)}
+        <li class="filme" onClick={selectFilme} data-bs-toggle="modal" data-bs-target="#modal-filme">
             <img src={filme.thumb} alt={filme.titulo} class="img-fluid"/>
             <div class="filme-info">
                 <div class="col-12">
@@ -20,7 +28,7 @@ const Filme = ({filme}) => {
                     <i class="ri-add-fill text-white"></i>
                     </a>
                 </div>
-                <p>T3:EP5 <text>"Meu Episodio"</text></p>
+                <p>T3:EP5 <text>{filme.titulo}</text></p>
             </div>
         </li>
     )
