@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import titulo from '../../../assets/titulo.png'
 import Episodio from "../Episodeo";
 import api from '../../../services/api'
 
@@ -45,7 +44,7 @@ const ModalFilme = () => {
             <div class="modal-dialog">
                 <div class="modal-content">
                     <div class="modal-hero">
-                    <img src={titulo}/>
+                    <img src={filme.capa} alt=""/>
                     <div class="col-12 modal-hero-infos">
                         <button class="btn btn-lg bg-light">
                         <i class="ri-play-mini-fill"></i>
@@ -73,13 +72,7 @@ const ModalFilme = () => {
                         </div>
                         <div class="col-5">
                             <p class="filme-elenco">
-                            Elenco: <text>Debby Ryan (Blaire), Lucy Fry (Zoé Moreau), Sydney Sweeney (Eva), Megan Fox (Grace), Alfie Owen-Allen (Victor). </text>
-                            <br/>
-                            <br/>
-                            Generos: <text> Ação, Aventura, Drama.</text>
-                            <br/>
-                            <br/>
-                            Cenas e momentos: <text>Violentos. </text>
+                            Elenco: <text>{filme.elenco.join(', ')}</text>
 
                             </p>
                         </div>
