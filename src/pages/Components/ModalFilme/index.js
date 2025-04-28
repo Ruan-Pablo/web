@@ -23,7 +23,7 @@ const ModalFilme = () => {
                 alert(res.message)
                 return false
             }
-            console.log(res.episodios)
+            
             setEpisodios(res.episodios)
         }catch(err){
             console.log(err.message)
@@ -32,6 +32,7 @@ const ModalFilme = () => {
 
     useEffect(() => {
         selectFilmeListener()
+        
     }, [])
     useEffect(() => {
         if(filme.tipo == 'serie'){
@@ -43,8 +44,10 @@ const ModalFilme = () => {
         <div class="modal fade" id="modal-filme" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
             <div class="modal-dialog">
                 <div class="modal-content">
-                    <div class="modal-hero">
-                    <img src={filme.capa} alt=""/>
+                    <div class="modal-hero" style={
+                        {backgroundImage: filme.thumb, backgroundPosition: "center", backgroundSize: "cover"} 
+                    }>
+                    <img src={filme.thumb} alt=""/>
                     <div class="col-12 modal-hero-infos">
                         <button class="btn btn-lg bg-light">
                         <i class="ri-play-mini-fill"></i>
@@ -72,7 +75,8 @@ const ModalFilme = () => {
                         </div>
                         <div class="col-5">
                             <p class="filme-elenco">
-                            Elenco: <text>{filme.elenco.join(', ')}</text>
+                            Elenco: <text>{console.log(filme)}</text>
+                            {/* Elenco: <text>{filme.elenco.join(', ')}</text> */}
 
                             </p>
                         </div>
